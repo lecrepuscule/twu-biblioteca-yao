@@ -27,14 +27,15 @@ public class BibliotecaAppTest {
     @Test
     public void testWelcomeMessage() {
         BibliotecaApp biblioteca = new BibliotecaApp();
-
         assertEquals("Welcome to Biblioteca\n", outContent.toString());
     }
 
 
     @Test
     public void testListBooks() {
-        assertEquals(1, 1);
+        String[] books = {"book1", "book2", "book3"};
+        BibliotecaApp biblioteca = new BibliotecaApp(books);
+        assertEquals(books, biblioteca.listBooks());
     }
 
 
