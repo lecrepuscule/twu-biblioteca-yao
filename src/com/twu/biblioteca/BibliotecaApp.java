@@ -4,8 +4,7 @@ public class BibliotecaApp {
 
     String[] books;
 
-    public static void main(String[] args) {
-
+    public BibliotecaApp() {
         System.out.println("Welcome to Biblioteca");
     }
 }
