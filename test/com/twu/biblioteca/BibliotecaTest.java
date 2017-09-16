@@ -9,7 +9,7 @@ import java.io.PrintStream;
 import static org.junit.Assert.*;
 
 
-public class BibliotecaAppTest {
+public class BibliotecaTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -33,14 +33,14 @@ public class BibliotecaAppTest {
 
     @Test
     public void testWelcomeMessage() {
-        BibliotecaApp biblioteca = new BibliotecaApp();
+        Biblioteca biblioteca = new Biblioteca();
         assertEquals("Welcome to Biblioteca\n", outContent.toString());
     }
 
 
     @Test
-    public void testListBooks() {
-        BibliotecaApp biblioteca = new BibliotecaApp(books);
+    public void testListBooksWithDetails() {
+        Biblioteca biblioteca = new Biblioteca(books);
         biblioteca.printBookList();
         assertEquals(
                 "Welcome to Biblioteca\ntitle: " + books[0].getTitle() + "; author: " + books[0].getAuthor() + "; year: " + books[0].getYear()
@@ -50,11 +50,6 @@ public class BibliotecaAppTest {
                 outContent.toString());
     }
 
-
-    @Test
-    public void testBookDetails() {
-        assertEquals(1, 1);
-    }
 
     @Test
     public void testMainMenu() {
