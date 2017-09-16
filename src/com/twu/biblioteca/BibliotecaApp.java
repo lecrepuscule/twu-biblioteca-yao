@@ -2,18 +2,20 @@ package com.twu.biblioteca;
 
 public class BibliotecaApp {
 
-    private String[] books;
+    private Book[] books;
 
     public BibliotecaApp() {
         System.out.println("Welcome to Biblioteca");
     }
 
-    public BibliotecaApp(String[] bookList) {
+    public BibliotecaApp(Book[] bookList) {
         books = bookList;
         System.out.println("Welcome to Biblioteca");
     }
 
-    public String[] listBooks() {
-        return books;
+    public void printBookList() {
+        for (int i = 0; i < books.length; i++) {
+            System.out.println("title: " + books[i].getTitle() + "; author: " + books[i].getAuthor() + "; year: " + books[i].getYear());
+        }
     }
 }
