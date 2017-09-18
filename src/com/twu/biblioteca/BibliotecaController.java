@@ -28,6 +28,7 @@ public class BibliotecaController {
         } else if (input == 2) {
             int bookId = getValidBookId(System.in, System.out);
             biblioteca.checkoutBook(bookId);
+            System.out.println("Thank you! Enjoy the book.");
         } else if (input == 0) {
             run = false;
         }

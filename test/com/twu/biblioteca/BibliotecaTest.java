@@ -44,10 +44,10 @@ public class BibliotecaTest {
     public void testListBooksWithDetails() {
         Biblioteca biblioteca = new Biblioteca();
         biblioteca.printBookList();
-        assertThat(outContent.toString(), containsString("id: " + book1.getId() + "title: " + book1.getTitle() + "; author: " + book1.getAuthor() + "; year: " + book1.getYear()
-                + "\nid: " + book2.getId() + "title: " + book2.getTitle() + "; author: " + book2.getAuthor() + "; year: " + book2.getYear()
-                + "\nid: " + book3.getId() + "title: " + book3.getTitle() + "; author: " + book3.getAuthor() + "; year: " + book3.getYear()
-                + "\nid: " + book4.getId() + "title: " + book4.getTitle() + "; author: " + book4.getAuthor() + "; year: " + book4.getYear() + "\n"));
+        assertThat(outContent.toString(), containsString("id: " + book1.getId() + "; title: " + book1.getTitle() + "; author: " + book1.getAuthor() + "; year: " + book1.getYear()
+                + "\nid: " + book2.getId() + "; title: " + book2.getTitle() + "; author: " + book2.getAuthor() + "; year: " + book2.getYear()
+                + "\nid: " + book3.getId() + "; title: " + book3.getTitle() + "; author: " + book3.getAuthor() + "; year: " + book3.getYear()
+                + "\nid: " + book4.getId() + "; title: " + book4.getTitle() + "; author: " + book4.getAuthor() + "; year: " + book4.getYear() + "\n"));
     }
 
 
@@ -84,6 +84,22 @@ public class BibliotecaTest {
         assertThat(outContent.toString(), containsString("Goodbye"));
     }
 
+    @Test
+    public void testValidBookId() {
+        BibliotecaController bc = new BibliotecaController();
+        ByteArrayInputStream input = new ByteArrayInputStream("1".getBytes());
+        int userInput = bc.getValidBookId(input, System.out);
+        assertEquals(1, userInput);
+    }
+
+    @Test public void testInvalidBookId() {
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "-13\n" + "1\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        int userInput = bc.getValidBookId(input, System.out);
+        assertThat(outContent.toString(), containsString("That book is not available"));
+    }
+    
     @Test
     public void testSuccessfulCheckout() {
         assertEquals(1, 1);

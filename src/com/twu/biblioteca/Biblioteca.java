@@ -20,10 +20,12 @@ public class Biblioteca {
 
     }
 
-    public void checkoutBook(int bookId) {
+    public int checkoutBook(int bookId) {
         if (canCheckoutBook(bookId)) {
             books.get(bookId).setCheckedOut(true);
+            return bookId;
         }
+        return 0;
     }
 
     public Boolean canCheckoutBook(int bookId) {
