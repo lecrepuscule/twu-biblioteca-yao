@@ -32,16 +32,18 @@ public class BibliotecaController {
         printMenu();
         String input = userInput.nextLine();
 
-        while (input != "1" || input != "0") {
+        while (!input.equals("1") && !input.equals("0")) {
             out.println("This is not a valid option");
             printMenu();
+            input = userInput.nextLine();
         }
 
         return input;
     }
 
-    public void runApp(InputStream in, PrintStream out) {
-        out.println("Welcome to Biblioteca");
+    public void runApp() {
+
+        System.out.println("Welcome to Biblioteca");
 
         while (run) {
             String input = getValidUserInput(System.in, System.out);

@@ -4,6 +4,8 @@ package com.twu.biblioteca;
 import org.junit.Test;
 import org.junit.Before;
 import org.junit.After;
+
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.junit.Assert.*;
@@ -47,18 +49,24 @@ public class BibliotecaTest {
                 + "\ntitle: " + books[1].getTitle() + "; author: " + books[1].getAuthor() + "; year: " + books[1].getYear()
                 + "\ntitle: " + books[2].getTitle() + "; author: " + books[2].getAuthor() + "; year: " + books[2].getYear()
                 + "\ntitle: " + books[3].getTitle() + "; author: " + books[3].getAuthor() + "; year: " + books[3].getYear() + "\n"));
-
     }
 
 
     @Test
-    public void testMainMenu() {
-        assertEquals(1, 1);
+    public void testValidMenuOption() {
+        BibliotecaController bc = new BibliotecaController();
+        ByteArrayInputStream input = new ByteArrayInputStream("1".getBytes());
+        String userInput = bc.getValidUserInput(input, System.out);
+        assertEquals("1", userInput);
     }
 
     @Test
     public void testInvalidMenuOption() {
-        assertEquals(1, 1);
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "2\n" + "1\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        String userInput = bc.getValidUserInput(input, System.out);
+        assertThat(outContent.toString(), containsString("This is not a valid option"));
     }
 
     @Test
