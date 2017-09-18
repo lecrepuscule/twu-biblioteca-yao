@@ -1,5 +1,7 @@
 package com.twu.biblioteca;
 
+import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class BibliotecaController {
@@ -10,6 +12,7 @@ public class BibliotecaController {
     private Boolean run = true;
 
     public void printMenu() {
+        System.out.println("Please type in the number from menu: ");
         for (String item : menu) {
             System.out.println(item);
         }
@@ -23,15 +26,25 @@ public class BibliotecaController {
         }
     }
 
-    public void runApp() {
-        System.out.println("Welcome to Biblioteca");
+    public String getValidUserInput(InputStream in, PrintStream out) {
 
-        Scanner userInput = new Scanner(System.in);
+        Scanner userInput = new Scanner(in);
+        printMenu();
+        String input = userInput.nextLine();
+
+        while (input != "1" || input != "0") {
+            out.println("This is not a valid option");
+            printMenu();
+        }
+
+        return input;
+    }
+
+    public void runApp(InputStream in, PrintStream out) {
+        out.println("Welcome to Biblioteca");
 
         while (run) {
-            System.out.println("Please type in the number from menu: ");
-            printMenu();
-            String input = userInput.nextLine();
+            String input = getValidUserInput(System.in, System.out);
             actionCommand(input);
         }
 

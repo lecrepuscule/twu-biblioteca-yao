@@ -7,6 +7,7 @@ import org.junit.After;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.containsString;
 
 
 public class BibliotecaTest {
@@ -42,12 +43,11 @@ public class BibliotecaTest {
     public void testListBooksWithDetails() {
         Biblioteca biblioteca = new Biblioteca(books);
         biblioteca.printBookList();
-        assertEquals(
-                "Welcome to Biblioteca\ntitle: " + books[0].getTitle() + "; author: " + books[0].getAuthor() + "; year: " + books[0].getYear()
-                        + "\ntitle: " + books[1].getTitle() + "; author: " + books[1].getAuthor() + "; year: " + books[1].getYear()
-                        + "\ntitle: " + books[2].getTitle() + "; author: " + books[2].getAuthor() + "; year: " + books[2].getYear()
-                        + "\ntitle: " + books[3].getTitle() + "; author: " + books[3].getAuthor() + "; year: " + books[3].getYear() + "\n",
-                outContent.toString());
+        assertThat(outContent.toString(), containsString("title: " + books[0].getTitle() + "; author: " + books[0].getAuthor() + "; year: " + books[0].getYear()
+                + "\ntitle: " + books[1].getTitle() + "; author: " + books[1].getAuthor() + "; year: " + books[1].getYear()
+                + "\ntitle: " + books[2].getTitle() + "; author: " + books[2].getAuthor() + "; year: " + books[2].getYear()
+                + "\ntitle: " + books[3].getTitle() + "; author: " + books[3].getAuthor() + "; year: " + books[3].getYear() + "\n"));
+
     }
 
 
