@@ -78,7 +78,11 @@ public class BibliotecaTest {
 
     @Test
     public void testQuit() {
-        assertEquals(1, 1);
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "0";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        bc.runApp(input, System.out);
+        assertThat(outContent.toString(), containsString("Goodbye"));
     }
 
     @Test

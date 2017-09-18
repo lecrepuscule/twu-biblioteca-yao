@@ -23,9 +23,9 @@ public class BibliotecaController {
     }
 
     public void actionCommand(String input) {
-        if (input == "1") {
+        if (input.equals("1")) {
             biblioteca.printBookList();
-        } else if (input == "0") {
+        } else if (input.equals("0")) {
             run = false;
         }
     }
@@ -45,12 +45,13 @@ public class BibliotecaController {
         return input;
     }
 
-    public void runApp() {
+    public void runApp(InputStream in, PrintStream out) {
+        String input;
         while (run) {
-            String input = getValidUserInput(System.in, System.out);
+            input = getValidUserInput(in, out);
             actionCommand(input);
         }
 
-        System.out.println("Goodbye");
+        out.println("Goodbye");
     }
 }
