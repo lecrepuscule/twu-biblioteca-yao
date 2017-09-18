@@ -21,7 +21,9 @@ public class Biblioteca {
 
     public void printBookList() {
         for (int i = 0; i < books.length; i++) {
-            System.out.println("title: " + books[i].getTitle() + "; author: " + books[i].getAuthor() + "; year: " + books[i].getYear());
+            if (!books[i].isCheckedOut()) {
+                System.out.println("title: " + books[i].getTitle() + "; author: " + books[i].getAuthor() + "; year: " + books[i].getYear());
+            }
         }
     }
 }

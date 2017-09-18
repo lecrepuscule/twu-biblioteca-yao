@@ -4,6 +4,7 @@ public class Book {
     private String title;
     private String author;
     private int year;
+    private Boolean checkedOut = false;
 
     public Book(String bookTitle, String authorName, int publishedYear) {
         title = bookTitle;
@@ -21,5 +22,17 @@ public class Book {
 
     public int getYear() {
         return year;
+    }
+
+    public Boolean isCheckedOut() {
+        return checkedOut;
+    }
+
+    public void checkOut() {
+        checkedOut = true;
+    }
+
+    public void returnBook() {
+        checkedOut = false;
     }
 }
