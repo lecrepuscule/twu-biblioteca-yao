@@ -55,7 +55,7 @@ public class BibliotecaTest {
     public void testMainMenu() {
         BibliotecaController bc = new BibliotecaController();
         bc.printMenu();
-        assertThat(outContent.toString(), containsString("1. List Books\n" + "0. Quit\n"));
+        assertThat(outContent.toString(), containsString("1. List Books\n" + "2. Check-out a book\n" + "0. Quit\n"));
     }
 
     @Test
@@ -69,7 +69,7 @@ public class BibliotecaTest {
     @Test
     public void testInvalidMenuOption() {
         BibliotecaController bc = new BibliotecaController();
-        String inputString = "2\n" + "1\n";
+        String inputString = "33\n" + "1\n";
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
         String userInput = bc.getValidUserInput(input, System.out);
         assertThat(outContent.toString(), containsString("This is not a valid option"));

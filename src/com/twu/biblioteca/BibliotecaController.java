@@ -8,7 +8,7 @@ public class BibliotecaController {
 
     private Biblioteca biblioteca = new Biblioteca();
 
-    private String[] menu = {"1. List Books", "0. Quit"};
+    private String[] menu = {"1. List Books", "2. Check-out a book", "0. Quit"};
     private Boolean run = true;
 
     public BibliotecaController() {

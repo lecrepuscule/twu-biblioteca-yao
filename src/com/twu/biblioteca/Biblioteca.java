@@ -20,10 +20,13 @@ public class Biblioteca {
 
     }
 
-//    public void checkoutBook(Book book) {
-//        if ()
-//        book.setCheckedOut(true);
-//    }
+    public void checkoutBook(int bookId) {
+        if (books.containsKey(bookId) && !books.get(bookId).isCheckedOut()) {
+            books.get(bookId).setCheckedOut(true);
+        } else {
+            System.out.println("That book is not available");
+        }
+    }
 
 
     public void printBookList() {
