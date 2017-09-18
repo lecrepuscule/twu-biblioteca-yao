@@ -62,8 +62,8 @@ public class BibliotecaTest {
     public void testValidMenuOption() {
         BibliotecaController bc = new BibliotecaController();
         ByteArrayInputStream input = new ByteArrayInputStream("1".getBytes());
-        String userInput = bc.getValidUserInput(input, System.out);
-        assertEquals("1", userInput);
+        int userInput = bc.getValidUserInput(input, System.out);
+        assertEquals(1, userInput);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class BibliotecaTest {
         BibliotecaController bc = new BibliotecaController();
         String inputString = "33\n" + "1\n";
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
-        String userInput = bc.getValidUserInput(input, System.out);
+        int userInput = bc.getValidUserInput(input, System.out);
         assertThat(outContent.toString(), containsString("This is not a valid option"));
     }
 

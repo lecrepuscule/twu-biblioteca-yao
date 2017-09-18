@@ -21,18 +21,19 @@ public class Biblioteca {
     }
 
     public void checkoutBook(int bookId) {
-        if (books.containsKey(bookId) && !books.get(bookId).isCheckedOut()) {
+        if (canCheckoutBook(bookId)) {
             books.get(bookId).setCheckedOut(true);
-        } else {
-            System.out.println("That book is not available");
         }
     }
 
+    public Boolean canCheckoutBook(int bookId) {
+        return books.containsKey(bookId) && !books.get(bookId).isCheckedOut();
+    }
 
     public void printBookList() {
         for (Book book : books.values()) {
             if (!book.isCheckedOut()) {
-                System.out.println("id: " + book.getId() + "title: " + book.getTitle() + "; author: " + book.getAuthor() + "; year: " + book.getYear());
+                System.out.println("id: " + book.getId() + "; title: " + book.getTitle() + "; author: " + book.getAuthor() + "; year: " + book.getYear());
             }
         }
     }

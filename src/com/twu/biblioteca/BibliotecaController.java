@@ -22,31 +22,48 @@ public class BibliotecaController {
         }
     }
 
-    public void actionCommand(String input) {
-        if (input.equals("1")) {
+    public void actionCommand(int input) {
+        if (input == 1) {
             biblioteca.printBookList();
-        } else if (input.equals("0")) {
+        } else if (input == 2) {
+            int bookId = getValidBookId(System.in, System.out);
+            biblioteca.checkoutBook(bookId);
+        } else if (input == 0) {
             run = false;
         }
     }
 
-    public String getValidUserInput(InputStream in, PrintStream out) {
+    public int getValidBookId(InputStream in, PrintStream out) {
+        Scanner userInput = new Scanner(in);
+        out.println("Please type in the book ID: ");
+        biblioteca.printBookList();
+        int input = userInput.nextInt();
+
+        while (!biblioteca.canCheckoutBook(input)) {
+            out.println("That book is not available");
+            biblioteca.printBookList();
+            input = userInput.nextInt();
+        }
+        return input;
+    }
+
+    public int getValidUserInput(InputStream in, PrintStream out) {
 
         Scanner userInput = new Scanner(in);
         printMenu();
-        String input = userInput.nextLine();
+        int input = userInput.nextInt();
 
-        while (!input.equals("1") && !input.equals("0")) {
+        while (input != 1 && input != 0 && input != 2) {
             out.println("This is not a valid option");
             printMenu();
-            input = userInput.nextLine();
+            input = userInput.nextInt();
         }
 
         return input;
     }
 
     public void runApp(InputStream in, PrintStream out) {
-        String input;
+        int input;
         while (run) {
             input = getValidUserInput(in, out);
             actionCommand(input);
