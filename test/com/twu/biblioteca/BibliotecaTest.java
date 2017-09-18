@@ -72,7 +72,7 @@ public class BibliotecaTest {
         String inputString = "33\n" + "1\n";
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
         int userInput = bc.getValidUserInput(input, System.out);
-        assertThat(outContent.toString(), containsString("This is not a valid option"));
+        assertThat(outContent.toString(), containsString("This is not a valid option."));
     }
 
     @Test
@@ -81,7 +81,7 @@ public class BibliotecaTest {
         String inputString = "0";
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
         bc.runApp(input, System.out);
-        assertThat(outContent.toString(), containsString("Goodbye"));
+        assertThat(outContent.toString(), containsString("Goodbye."));
     }
 
     @Test
@@ -97,18 +97,18 @@ public class BibliotecaTest {
         String inputString = "-13\n" + "1\n";
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
         int userInput = bc.getValidBookId(input, System.out);
-        assertThat(outContent.toString(), containsString("That book is not available"));
-    }
-    
-    @Test
-    public void testSuccessfulCheckout() {
-        assertEquals(1, 1);
+        assertThat(outContent.toString(), containsString("That book is not available."));
     }
 
     @Test
-    public void testUnsuccessfulCheckout() {
-        assertEquals(1, 1);
+    public void testSuccessfulCheckout() {
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "2";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        bc.actionCommand(2, input, System.out);
+        assertThat(outContent.toString(), containsString("Thank you! Enjoy the book."));
     }
+
 
     @Test
     public void testSucessfulReturn() {

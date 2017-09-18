@@ -22,13 +22,13 @@ public class BibliotecaController {
         }
     }
 
-    public void actionCommand(int input) {
+    public void actionCommand(int input, InputStream in, PrintStream out) {
         if (input == 1) {
             biblioteca.printBookList();
         } else if (input == 2) {
-            int bookId = getValidBookId(System.in, System.out);
+            int bookId = getValidBookId(in, out);
             biblioteca.checkoutBook(bookId);
-            System.out.println("Thank you! Enjoy the book.");
+            out.println("Thank you! Enjoy the book.");
         } else if (input == 0) {
             run = false;
         }
@@ -41,7 +41,7 @@ public class BibliotecaController {
         int input = userInput.nextInt();
 
         while (!biblioteca.canCheckoutBook(input)) {
-            out.println("That book is not available");
+            out.println("That book is not available.");
             biblioteca.printBookList();
             input = userInput.nextInt();
         }
@@ -55,11 +55,10 @@ public class BibliotecaController {
         int input = userInput.nextInt();
 
         while (input != 1 && input != 0 && input != 2) {
-            out.println("This is not a valid option");
+            out.println("This is not a valid option.");
             printMenu();
             input = userInput.nextInt();
         }
-
         return input;
     }
 
@@ -67,9 +66,9 @@ public class BibliotecaController {
         int input;
         while (run) {
             input = getValidUserInput(in, out);
-            actionCommand(input);
+            actionCommand(input, in, out);
         }
 
-        out.println("Goodbye");
+        out.println("Goodbye.");
     }
 }
