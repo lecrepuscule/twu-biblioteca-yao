@@ -22,7 +22,6 @@ public class BibliotecaTest {
     private Book book3 = new Book(3,"book3", "author3", 2002);
     private Book book4 = new Book(4,"book4", "author4", 2003);
 
-    private Book[] books = {book1, book2, book3, book4};
 
     @Before public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
@@ -43,12 +42,12 @@ public class BibliotecaTest {
 
     @Test
     public void testListBooksWithDetails() {
-        Biblioteca biblioteca = new Biblioteca(books);
+        Biblioteca biblioteca = new Biblioteca();
         biblioteca.printBookList();
-        assertThat(outContent.toString(), containsString("id: " + books[0].getId() + "title: " + books[0].getTitle() + "; author: " + books[0].getAuthor() + "; year: " + books[0].getYear()
-                + "\nid: " + books[1].getId() + "title: " + books[1].getTitle() + "; author: " + books[1].getAuthor() + "; year: " + books[1].getYear()
-                + "\nid: " + books[2].getId() + "title: " + books[2].getTitle() + "; author: " + books[2].getAuthor() + "; year: " + books[2].getYear()
-                + "\nid: " + books[3].getId() + "title: " + books[3].getTitle() + "; author: " + books[3].getAuthor() + "; year: " + books[3].getYear() + "\n"));
+        assertThat(outContent.toString(), containsString("id: " + book1.getId() + "title: " + book1.getTitle() + "; author: " + book1.getAuthor() + "; year: " + book1.getYear()
+                + "\nid: " + book2.getId() + "title: " + book2.getTitle() + "; author: " + book2.getAuthor() + "; year: " + book2.getYear()
+                + "\nid: " + book3.getId() + "title: " + book3.getTitle() + "; author: " + book3.getAuthor() + "; year: " + book3.getYear()
+                + "\nid: " + book4.getId() + "title: " + book4.getTitle() + "; author: " + book4.getAuthor() + "; year: " + book4.getYear() + "\n"));
     }
 
 

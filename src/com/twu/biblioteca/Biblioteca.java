@@ -1,8 +1,11 @@
 package com.twu.biblioteca;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Biblioteca {
 
-    private Book[] books;
+    private Map<Integer, Book> books = new HashMap<Integer, Book>();
 
     public Biblioteca() {
         Book book1 = new Book(1,"book1", "author1", 2000);
@@ -10,11 +13,11 @@ public class Biblioteca {
         Book book3 = new Book(3,"book3", "author3", 2002);
         Book book4 = new Book(4,"book4", "author4", 2003);
 
-        books = new Book[] {book1, book2, book3, book4};
-    }
+        books.put(1, book1);
+        books.put(2, book2);
+        books.put(3, book3);
+        books.put(4, book4);
 
-    public Biblioteca(Book[] bookList) {
-        books = bookList;
     }
 
 //    public void checkoutBook(Book book) {
@@ -24,9 +27,9 @@ public class Biblioteca {
 
 
     public void printBookList() {
-        for (int i = 0; i < books.length; i++) {
-            if (!books[i].isCheckedOut()) {
-                System.out.println("id: " + books[i].getId() + "title: " + books[i].getTitle() + "; author: " + books[i].getAuthor() + "; year: " + books[i].getYear());
+        for (Book book : books.values()) {
+            if (!book.isCheckedOut()) {
+                System.out.println("id: " + book.getId() + "title: " + book.getTitle() + "; author: " + book.getAuthor() + "; year: " + book.getYear());
             }
         }
     }
