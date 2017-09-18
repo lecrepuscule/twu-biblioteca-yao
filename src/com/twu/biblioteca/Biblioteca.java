@@ -6,7 +6,6 @@ public class Biblioteca {
     private Boolean run = true;
 
     public Biblioteca() {
-        System.out.println("Welcome to Biblioteca");
         Book book1 = new Book("book1", "author1", 2000);
         Book book2 = new Book("book2", "author2", 2001);
         Book book3 = new Book("book3", "author3", 2002);
@@ -17,7 +16,6 @@ public class Biblioteca {
 
     public Biblioteca(Book[] bookList) {
         books = bookList;
-        System.out.println("Welcome to Biblioteca");
     }
 
 

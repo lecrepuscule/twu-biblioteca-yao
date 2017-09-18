@@ -36,8 +36,8 @@ public class BibliotecaTest {
 
     @Test
     public void testWelcomeMessage() {
-        Biblioteca biblioteca = new Biblioteca();
-        assertEquals("Welcome to Biblioteca\n", outContent.toString());
+        BibliotecaController bc = new BibliotecaController();
+        assertThat(outContent.toString(), containsString("Welcome to Biblioteca\n"));
     }
 
 
@@ -51,6 +51,13 @@ public class BibliotecaTest {
                 + "\ntitle: " + books[3].getTitle() + "; author: " + books[3].getAuthor() + "; year: " + books[3].getYear() + "\n"));
     }
 
+
+    @Test
+    public void testMainMenu() {
+        BibliotecaController bc = new BibliotecaController();
+        bc.printMenu();
+        assertThat(outContent.toString(), containsString("1. List Books\n" + "0. Quit\n"));
+    }
 
     @Test
     public void testValidMenuOption() {

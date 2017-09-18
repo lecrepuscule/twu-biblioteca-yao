@@ -11,6 +11,10 @@ public class BibliotecaController {
     private String[] menu = {"1. List Books", "0. Quit"};
     private Boolean run = true;
 
+    public BibliotecaController() {
+        System.out.println("Welcome to Biblioteca");
+    }
+
     public void printMenu() {
         System.out.println("Please type in the number from menu: ");
         for (String item : menu) {
@@ -42,9 +46,6 @@ public class BibliotecaController {
     }
 
     public void runApp() {
-
-        System.out.println("Welcome to Biblioteca");
-
         while (run) {
             String input = getValidUserInput(System.in, System.out);
             actionCommand(input);
