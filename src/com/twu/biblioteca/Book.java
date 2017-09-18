@@ -1,15 +1,17 @@
 package com.twu.biblioteca;
 
 public class Book {
+    private int id;
     private String title;
     private String author;
     private int year;
     private Boolean checkedOut = false;
 
-    public Book(String bookTitle, String authorName, int publishedYear) {
-        title = bookTitle;
-        author = authorName;
-        year = publishedYear;
+    public Book(int id, String title, String author, int year) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.year = year;
     }
 
     public String getTitle() {
@@ -24,15 +26,14 @@ public class Book {
         return year;
     }
 
+    public int getId() { return id; }
+
     public Boolean isCheckedOut() {
         return checkedOut;
     }
 
-    public void checkOut() {
-        checkedOut = true;
+    public void setCheckedOut(Boolean status) {
+        checkedOut = status;
     }
 
-    public void returnBook() {
-        checkedOut = false;
-    }
 }
