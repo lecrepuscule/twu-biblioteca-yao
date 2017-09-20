@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faf86267-685f-4e12-8a25-d2d3c7f3d378" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/Biblioteca.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/Biblioteca.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaController.java" afterPath="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" afterPath="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" />
     </list>
@@ -14,14 +15,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5615194">
+    <splitter split-orientation="horizontal" split-proportion="0.40462428">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="BibliotecaTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="206">
-                  <caret line="105" column="33" lean-forward="true" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+                <state relative-caret-position="1920">
+                  <caret line="128" column="94" lean-forward="false" selection-start-line="128" selection-start-column="94" selection-end-line="128" selection-end-column="94" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -61,11 +62,13 @@
           <file leaf-file-name="Biblioteca.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Biblioteca.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="189">
-                  <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+                <state relative-caret-position="86">
+                  <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                     <element signature="e#155#170#0" expanded="true" />
+                    <element signature="e#1251#1252#0" expanded="true" />
+                    <element signature="e#1335#1336#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -84,12 +87,12 @@
           <file leaf-file-name="BibliotecaController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="691">
-                  <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+                <state relative-caret-position="15">
+                  <caret line="32" column="56" lean-forward="false" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#352#353#0" expanded="true" />
-                    <element signature="e#411#412#0" expanded="true" />
+                    <element signature="e#372#373#0" expanded="true" />
+                    <element signature="e#431#432#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -123,8 +126,8 @@
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Main.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Book.java" />
         <option value="$PROJECT_DIR$/src/com/twu/biblioteca/Biblioteca.java" />
-        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaController.java" />
         <option value="$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java" />
+        <option value="$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaController.java" />
       </list>
     </option>
   </component>
@@ -348,34 +351,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BibliotecaTest - 2017.09.18 at 16h 55m 47s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 43m 05s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 17m 40s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.19 at 02h 29m 17s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 18m 23s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.19 at 12h 48m 08s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 18m 55s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.20 at 13h 40m 44s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 19m 02s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.20 at 13h 40m 54s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 23m 52s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.20 at 13h 42m 09s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 26m 50s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.20 at 13h 42m 22s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 28m 06s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.20 at 13h 43m 46s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 29m 06s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.20 at 13h 44m 25s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BibliotecaTest - 2017.09.18 at 17h 32m 07s.xml">
+    <history-entry file="BibliotecaTest - 2017.09.20 at 13h 48m 42s.xml">
       <configuration name="BibliotecaTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -458,6 +461,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#155#170#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -468,8 +473,8 @@
           <caret line="31" column="21" lean-forward="false" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -504,6 +509,8 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#155#170#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -522,8 +529,8 @@
           <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -535,18 +542,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -566,33 +573,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/Biblioteca.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+        <state relative-caret-position="86">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#155#170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="60" column="9" lean-forward="false" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#352#353#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
+            <element signature="e#1251#1252#0" expanded="true" />
+            <element signature="e#1335#1336#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/twu/biblioteca/BibliotecaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="105" column="33" lean-forward="true" selection-start-line="105" selection-start-column="33" selection-end-line="105" selection-end-column="33" />
+        <state relative-caret-position="1920">
+          <caret line="128" column="94" lean-forward="false" selection-start-line="128" selection-start-column="94" selection-end-line="128" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/twu/biblioteca/BibliotecaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="32" column="56" lean-forward="false" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#372#373#0" expanded="true" />
+            <element signature="e#431#432#0" expanded="true" />
           </folding>
         </state>
       </provider>

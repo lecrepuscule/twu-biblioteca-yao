@@ -55,7 +55,7 @@ public class BibliotecaTest {
     public void testMainMenu() {
         BibliotecaController bc = new BibliotecaController();
         bc.printMenu();
-        assertThat(outContent.toString(), containsString("1. List Books\n" + "2. Check-out a book\n" + "0. Quit\n"));
+        assertThat(outContent.toString(), containsString("1. List Books\n" + "2. Check-out a book\n" + "3. Return a book\n" + "0. Quit\n"));
     }
 
     @Test
@@ -88,7 +88,7 @@ public class BibliotecaTest {
     public void testValidBookId() {
         BibliotecaController bc = new BibliotecaController();
         ByteArrayInputStream input = new ByteArrayInputStream("1".getBytes());
-        int userInput = bc.getValidBookId(input, System.out);
+        int userInput = bc.getValidBookId(input, System.out, "checkout");
         assertEquals(1, userInput);
     }
 
@@ -96,7 +96,7 @@ public class BibliotecaTest {
         BibliotecaController bc = new BibliotecaController();
         String inputString = "-13\n" + "1\n";
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
-        int userInput = bc.getValidBookId(input, System.out);
+        int userInput = bc.getValidBookId(input, System.out, "checkout");
         assertThat(outContent.toString(), containsString("That book is not available."));
     }
 
@@ -112,11 +112,20 @@ public class BibliotecaTest {
 
     @Test
     public void testSucessfulReturn() {
-        assertEquals(1, 1);
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "5";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        bc.actionCommand(3, input, System.out);
+        assertThat(outContent.toString(), containsString("Thank you for returning the book."));
     }
 
     @Test
     public void testUnsucessfulReturn() {
-        assertEquals(1, 1);
+
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "-13\n" + "5\n";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        int userInput = bc.getValidBookId(input, System.out, "return");
+        assertThat(outContent.toString(), containsString("That is not a valid book to return."));
     }
 }
