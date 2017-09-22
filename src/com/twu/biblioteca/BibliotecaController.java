@@ -8,7 +8,7 @@ public class BibliotecaController {
 
     private Biblioteca biblioteca = new Biblioteca();
 
-    private String[] menu = {"1. List Books", "2. Check-out a book", "3. Return a book", "0. Quit"};
+    private String[] menu = {"1. List Books", "2. Check-out a book", "3. Return a book", "4. List Movies", "5. Check-out a Movie", "0. Quit"};
     private Boolean run = true;
 
     public BibliotecaController() {
@@ -16,7 +16,7 @@ public class BibliotecaController {
     }
 
     public void printMenu() {
-        System.out.println("Please type in the number from menu: ");
+        System.out.println("Please type in a number from menu: ");
         for (String item : menu) {
             System.out.println(item);
         }
@@ -33,6 +33,8 @@ public class BibliotecaController {
             int bookId = getValidBookId(in, out, "return");
             biblioteca.returnBook(bookId);
             out.println("Thank you for returning the book.");
+        } else if (input == 4) {
+            biblioteca.printMovieList();
         } else if (input == 0) {
             run = false;
         }
@@ -41,7 +43,6 @@ public class BibliotecaController {
     public int getValidBookId(InputStream in, PrintStream out, String condition) {
         Scanner userInput = new Scanner(in);
         out.println("Please type in the book ID: ");
-        biblioteca.printBookList();
         int input = userInput.nextInt();
 
         if (condition.equals("checkout")) {
@@ -53,7 +54,7 @@ public class BibliotecaController {
         } else if (condition.equals("return")) {
             while (!biblioteca.canReturnBook(input)) {
                 out.println("That is not a valid book to return.");
-                biblioteca.printBookList();
+                biblioteca.printReturnBookList();
                 input = userInput.nextInt();
             }
         }
@@ -67,7 +68,7 @@ public class BibliotecaController {
         printMenu();
         int input = userInput.nextInt();
 
-        while (input != 1 && input != 0 && input != 2 && input != 3) {
+        while (input < 0 || input >= menu.length) {
             out.println("This is not a valid option.");
             printMenu();
             input = userInput.nextInt();

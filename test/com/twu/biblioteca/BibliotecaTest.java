@@ -22,6 +22,8 @@ public class BibliotecaTest {
     private Book book3 = new Book(3,"book3", "author3", 2002);
     private Book book4 = new Book(4,"book4", "author4", 2003);
 
+    private Movie movie1 = new Movie(1, "movie1", "director1", 2005,4);
+    private Movie movie2 = new Movie(2, "movie2", "director2", 2006, 2);
 
     @Before public void setUpStreams() {
         System.setOut(new PrintStream(outContent));
@@ -55,7 +57,7 @@ public class BibliotecaTest {
     public void testMainMenu() {
         BibliotecaController bc = new BibliotecaController();
         bc.printMenu();
-        assertThat(outContent.toString(), containsString("1. List Books\n" + "2. Check-out a book\n" + "3. Return a book\n" + "0. Quit\n"));
+        assertThat(outContent.toString(), containsString("1. List Books\n" + "2. Check-out a book\n" + "3. Return a book\n" + "4. List Movies\n" + "5. Check-out a Movie\n" + "0. Quit\n"));
     }
 
     @Test
@@ -127,5 +129,18 @@ public class BibliotecaTest {
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
         int userInput = bc.getValidBookId(input, System.out, "return");
         assertThat(outContent.toString(), containsString("That is not a valid book to return."));
+    }
+
+    @Test
+    public void testListMovies() {
+        Biblioteca biblioteca = new Biblioteca();
+        biblioteca.printMovieList();
+        assertThat(outContent.toString(), containsString("id: " + movie1.getId() + "; name: " + movie1.getName() + "; director: " + movie1.getDirector() + "; year: " + movie1.getYear() + "; rating: " + movie1.getRating()
+                + "\nid: " + movie2.getId() + "; name: " + movie2.getName() + "; director: " + movie2.getDirector() + "; year: " + movie2.getYear() + "; rating: " + movie2.getRating()));
+    }
+
+    @Test
+    public void testSucessfulMovieCheckout(){
+
     }
 }

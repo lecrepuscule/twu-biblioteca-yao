@@ -6,6 +6,7 @@ import java.util.Map;
 public class Biblioteca {
 
     private Map<Integer, Book> books = new HashMap<Integer, Book>();
+    private Map<Integer, Movie> movies = new HashMap<Integer, Movie>();
 
     public Biblioteca() {
         Book book1 = new Book(1,"book1", "author1", 2000);
@@ -21,6 +22,13 @@ public class Biblioteca {
         books.put(3, book3);
         books.put(4, book4);
         books.put(5, book5);
+
+
+        Movie movie1 = new Movie(1, "movie1", "director1", 2005,4);
+        Movie movie2 = new Movie(2, "movie2", "director2", 2006, 2);
+
+        movies.put(1, movie1);
+        movies.put(2, movie2);
 
     }
 
@@ -60,6 +68,14 @@ public class Biblioteca {
         for (Book book : books.values()) {
             if (book.isCheckedOut()) {
                 System.out.println("id: " + book.getId() + "; title: " + book.getTitle() + "; author: " + book.getAuthor() + "; year: " + book.getYear());
+            }
+        }
+    }
+
+    public void printMovieList() {
+        for (Movie movie : movies.values()) {
+            if (!movie.isCheckedOut()) {
+                System.out.println("id: " + movie.getId() + "; name: " + movie.getName() + "; director: " + movie.getDirector() + "; year: " + movie.getYear() + "; rating: " + movie.getRating());
             }
         }
     }
