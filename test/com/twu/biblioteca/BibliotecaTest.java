@@ -141,6 +141,10 @@ public class BibliotecaTest {
 
     @Test
     public void testSucessfulMovieCheckout(){
-
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "2";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        bc.actionCommand(5, input, System.out);
+        assertThat(outContent.toString(), containsString("Thank you! Enjoy the movie."));
     }
 }

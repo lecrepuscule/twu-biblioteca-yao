@@ -35,6 +35,10 @@ public class BibliotecaController {
             out.println("Thank you for returning the book.");
         } else if (input == 4) {
             biblioteca.printMovieList();
+        } else if (input == 5) {
+            int movieId = getValidMovieId(in, out, "checkout");
+            biblioteca.checkoutMovie(movieId);
+            out.println("Thank you! Enjoy the movie.");
         } else if (input == 0) {
             run = false;
         }
@@ -55,6 +59,28 @@ public class BibliotecaController {
             while (!biblioteca.canReturnBook(input)) {
                 out.println("That is not a valid book to return.");
                 biblioteca.printReturnBookList();
+                input = userInput.nextInt();
+            }
+        }
+
+        return input;
+    }
+
+    public int getValidMovieId(InputStream in, PrintStream out, String condition) {
+        Scanner userInput = new Scanner(in);
+        out.println("Please type in the movie ID: ");
+        int input = userInput.nextInt();
+
+        if (condition.equals("checkout")) {
+            while (!biblioteca.canCheckoutMovie(input)) {
+                out.println("That movie is not available.");
+                biblioteca.printMovieList();
+                input = userInput.nextInt();
+            }
+        } else if (condition.equals("return")) {
+            while (!biblioteca.canReturnBook(input)) {
+                out.println("That is not a valid movie to return.");
+                biblioteca.printReturnMovieList();
                 input = userInput.nextInt();
             }
         }

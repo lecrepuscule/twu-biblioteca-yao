@@ -79,4 +79,24 @@ public class Biblioteca {
             }
         }
     }
+
+    public void printReturnMovieList() {
+        for (Movie movie : movies.values()) {
+            if (movie.isCheckedOut()) {
+                System.out.println("id: " + movie.getId() + "; name: " + movie.getName() + "; director: " + movie.getDirector() + "; year: " + movie.getYear() + "; rating: " + movie.getRating());
+            }
+        }
+    }
+
+    public int checkoutMovie(int movieId) {
+        if (canCheckoutMovie(movieId)) {
+            movies.get(movieId).setCheckedOut(true);
+            return movieId;
+        }
+        return 0;
+    }
+
+    public Boolean canCheckoutMovie(int movieId) {
+        return movies.containsKey(movieId) && !movies.get(movieId).isCheckedOut();
+    }
 }
