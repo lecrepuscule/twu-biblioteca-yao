@@ -57,7 +57,7 @@ public class BibliotecaTest {
     public void testMainMenu() {
         BibliotecaController bc = new BibliotecaController();
         bc.printMenu();
-        assertThat(outContent.toString(), containsString("1. List Books\n" + "2. Check-out a book\n" + "3. Return a book\n" + "4. List Movies\n" + "5. Check-out a Movie\n" + "0. Quit\n"));
+        assertThat(outContent.toString(), containsString("1. List Books\n" + "2. Check-out a book\n" + "3. Return a book\n" + "4. List Movies\n" + "5. Check-out a Movie\n" + "6. My details\n" + "0. Quit\n"));
     }
 
     @Test
@@ -82,7 +82,8 @@ public class BibliotecaTest {
         BibliotecaController bc = new BibliotecaController();
         String inputString = "0";
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
-        bc.runApp(input, System.out);
+        bc.runApp(input, System.out, true);
+
         assertThat(outContent.toString(), containsString("Goodbye."));
     }
 
@@ -146,5 +147,15 @@ public class BibliotecaTest {
         ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
         bc.actionCommand(5, input, System.out);
         assertThat(outContent.toString(), containsString("Thank you! Enjoy the movie."));
+    }
+
+    @Test
+    public void testGetValidSessionUser() {
+        BibliotecaController bc = new BibliotecaController();
+        String inputString = "2222222\n" + "password2";
+        ByteArrayInputStream input = new ByteArrayInputStream(inputString.getBytes());
+        bc.userLogIn(input, System.out);
+        bc.printSessionUserDetails();
+        assertThat(outContent.toString(), containsString("name: user2\nemail: user2@email.com\nphone: 7654321\n"));
     }
 }

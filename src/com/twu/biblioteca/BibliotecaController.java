@@ -7,9 +7,10 @@ import java.util.Scanner;
 public class BibliotecaController {
 
     private Biblioteca biblioteca = new Biblioteca();
+    private User sessionUser;
 
-    private String[] menu = {"1. List Books", "2. Check-out a book", "3. Return a book", "4. List Movies", "5. Check-out a Movie", "0. Quit"};
-    private Boolean run = true;
+    private String[] menu = {"1. List Books", "2. Check-out a book", "3. Return a book", "4. List Movies", "5. Check-out a Movie", "6. My details", "0. Quit"};
+    private Boolean run = false;
 
     public BibliotecaController() {
         System.out.println("Welcome to Biblioteca");
@@ -39,6 +40,8 @@ public class BibliotecaController {
             int movieId = getValidMovieId(in, out, "checkout");
             biblioteca.checkoutMovie(movieId);
             out.println("Thank you! Enjoy the movie.");
+        } else if (input == 6) {
+            printSessionUserDetails();
         } else if (input == 0) {
             run = false;
         }
@@ -102,7 +105,34 @@ public class BibliotecaController {
         return input;
     }
 
-    public void runApp(InputStream in, PrintStream out) {
+    public void userLogIn(InputStream in, PrintStream out) {
+        Scanner userInput = new Scanner(in);
+        out.println("Library Number: ");
+        String libNum = userInput.nextLine();
+        out.println("Password: ");
+        String pwd = userInput.nextLine();
+        while (!biblioteca.canGetUser(Integer.parseInt(libNum), pwd)) {
+            out.println("Invalid user name or password.");
+            out.println("Library Number: ");
+            libNum = userInput.nextLine();
+            out.println("Password: ");
+            pwd = userInput.nextLine();
+        }
+        sessionUser = biblioteca.getUser(Integer.parseInt(libNum), pwd);
+        run = true;
+
+    }
+
+    public void printSessionUserDetails() {
+        System.out.println("name: " + sessionUser.getName() + "\nemail: " + sessionUser.getEmail() + "\nphone: " + sessionUser.getPhone());
+    }
+
+    public void runApp(InputStream in, PrintStream out, Boolean testSession) {
+        if (testSession) {
+            sessionUser = new User (3333333, "passwordTest", "testUser", "testUser@email.com", 2345678);
+        } else {
+            userLogIn(in, out);
+        }
         int input;
         while (run) {
             input = getValidUserInput(in, out);

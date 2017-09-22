@@ -7,6 +7,7 @@ public class Biblioteca {
 
     private Map<Integer, Book> books = new HashMap<Integer, Book>();
     private Map<Integer, Movie> movies = new HashMap<Integer, Movie>();
+    private Map<Integer, User> users = new HashMap<Integer, User>();
 
     public Biblioteca() {
         Book book1 = new Book(1,"book1", "author1", 2000);
@@ -30,6 +31,20 @@ public class Biblioteca {
         movies.put(1, movie1);
         movies.put(2, movie2);
 
+        User user1 = new User(1111111, "password1","user1", "user1@email.com", 1234567);
+        User user2 = new User(2222222, "password2","user2", "user2@email.com", 7654321);
+
+        users.put(1111111, user1);
+        users.put(2222222, user2);
+
+    }
+
+    public User getUser(int libraryNumber, String password) {
+        return users.get(libraryNumber);
+    }
+
+    public Boolean canGetUser(int libraryNumber, String password) {
+        return users.containsKey(libraryNumber) && users.get(libraryNumber).getPassword().equals((password));
     }
 
     public int checkoutBook(int bookId) {
